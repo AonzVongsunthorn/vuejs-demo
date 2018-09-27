@@ -1,10 +1,12 @@
 **Vue Demo**
 
-Using for demostate about basic of Vue.
+Using for demonstrate about basic of Vue.
 
 And a sample application.
 
 **Required**
+
+NodeJS
 
 vue-cli install by **_npm install -g vue-cli_**
 
