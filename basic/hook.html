@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello, test hook!</title>
+    <script src="public/js/vue.js"></script>
+    <link rel="stylesheet" href="public/css/styles.css">
+</head>
+<body>
+    <div id="app">
+        {{text}}
+        <hr>
+        <span>Count: {{count}}</span>
+        <br>
+        <button class="vue-btn" @click="increment">Increment</button>
+    </div>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                text: 'Hello, test hook!',
+                count: 0
+            },
+            methods: {
+                alert(event) {
+                    alert(`Hook from ${event}`);
+                },
+                increment() {
+                    this.count++;
+                }
+            },
+            created() {
+                this.alert('created');
+            },
+            mounted() {
+                this.alert('mounted')
+            },
+            updated() {
+                console.log('this.count', this.count);
+            }
+        });
+    </script>
+</body>
+</html>

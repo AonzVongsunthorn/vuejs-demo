@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="public/js/vue.js"></script>
+    <link rel="stylesheet" href="public/css/styles.css">
+</head>
+<body>
+    <div id="app">
+        <h1>Colors List</h1>
+        <ul>
+            <li v-for="color in colors"> {{color}} </li>
+        </ul>
+
+        <hr>
+        <h1>Pet List</h1>
+        <ul>
+            <li v-for="animal in animals" v-if="animal.isPet"> {{animal.name}} </li>
+        </ul>
+
+    </div>
+
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                colors: ['red', 'green', 'blue', 'yellow'],
+                animals: [
+                    {
+                        name: 'Tiger',
+                        isPet: false
+                    },
+                    {
+                        name: 'Dog',
+                        isPet: true
+                    },
+                    {
+                        name: 'Cat',
+                        isPet: true
+                    },
+                    {
+                        name: 'Lion',
+                        isPet: false
+                    },
+                ]
+            }
+        });
+    </script>
+</body>
+</html>

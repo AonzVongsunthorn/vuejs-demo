@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Computed</title>
+    <script src="public/js/vue.js"></script>
+    <link rel="stylesheet" href="public/css/styles.css">
+</head>
+<body>
+    <div id="app">
+        <span>Enter text</span>
+        <input type="text" v-model="text" placeholder="text ...">
+        <br>
+        <span>Lower: {{lowerText}}</span>
+    </div>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                text: ''
+            },
+            computed: {
+                lowerText() {
+                    return this.text.toLowerCase()
+                }
+            }
+        });
+    </script>
+</body>
+</html>

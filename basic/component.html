@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Components</title>
+    <script src="public/js/vue.js"></script>
+    <link rel="stylesheet" href="public/css/styles.css">
+</head>
+<body>
+    <div id="app">
+        <counter add-num="5"></counter>
+        <hr>
+        <counter v-bind:add-num="5"></counter>
+    </div>
+
+    <script>
+
+        var counter = Vue.component('counter', {
+            template: `
+                <div>
+                    <div>Count: {{this.count}}</div>
+                    <button class="vue-btn" @click="increment">Increment by {{addNum}}</button>
+                </div>
+            `,
+            data() {
+                return {
+                    count: 0
+                }
+            },
+            props: {
+                addNum: {
+                    type: Number,
+                    default: 1
+                }
+            },
+            methods: {
+                increment() {
+                    this.count += this.addNum
+                }
+            }
+        });
+
+        var app = new Vue({
+            el: '#app',
+            components: {
+                counter
+            }
+        });
+    </script>
+</body>
+</html>

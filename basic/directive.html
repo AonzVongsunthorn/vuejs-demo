@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Directive</title>
+    <script src="public/js/vue.js"></script>
+    <link rel="stylesheet" href="public/css/styles.css">
+</head>
+<body>
+    <div id="app">
+        <div
+            v-bind:title="randNumber"
+            v-if="isShow">
+            Hover over me for your random number
+        </div>
+    </div>
+
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                randNumber: Math.floor(Math.random() * 100) + 1,
+                isShow: true
+            }
+        });
+    </script>
+</body>
+</html>
